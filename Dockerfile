@@ -1,7 +1,9 @@
 FROM fedora:41
 
 # Install Cockpit and dependencies
-RUN dnf install -y cockpit cockpit-dashboard cockpit-system cockpit-networkmanager
+RUN dnf -y update && \
+    dnf install -y cockpit cockpit-dashboard cockpit-system cockpit-networkmanager && \
+    dnf clean all
 
 # Expose Cockpit port
 EXPOSE 9090
