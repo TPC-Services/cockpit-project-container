@@ -2,7 +2,7 @@ FROM fedora:41
 
 # Install Cockpit and dependencies
 RUN dnf -y update && \
-    dnf install -y cockpit cockpit-dashboard cockpit-system cockpit-networkmanager && \
+    dnf install -y cockpit && \
     dnf clean all
 
 # Expose Cockpit port
